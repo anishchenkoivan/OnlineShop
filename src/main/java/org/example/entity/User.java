@@ -4,6 +4,7 @@ import org.example.entity.entityId.UserId;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class User {
   private final UserId userId;
@@ -19,5 +20,18 @@ public class User {
 
   public Map<Products, Integer> getCart() {
     return cart;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    User user = (User) o;
+    return Objects.equals(userId, user.userId) && Objects.equals(cart, user.cart);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(userId, cart);
   }
 }

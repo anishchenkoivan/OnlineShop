@@ -1,13 +1,18 @@
 package org.example.entity.entityId;
 
-public final class UserId {
-  public UserId(long id) {
-    this.id = id;
+import java.util.Objects;
+
+public record UserId(long id) {
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    UserId userId = (UserId) o;
+    return id == userId.id;
   }
 
-  private final long id;
-
-  public long getId() {
-    return id;
+  @Override
+  public int hashCode() {
+    return Objects.hash(id);
   }
 }

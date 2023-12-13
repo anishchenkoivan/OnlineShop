@@ -6,5 +6,5 @@ public enum Product {
   BREAD,
   VODKA,
   DOSHIRAK,
-  PASTA
+  PASTA;
 }

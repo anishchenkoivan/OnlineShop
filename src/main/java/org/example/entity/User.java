@@ -54,4 +54,8 @@ public class User {
       cart.put(product, cart.get(product) - value);
     }
   }
+
+  public void clearCart() {
+    cart.clear();
+  }
 }

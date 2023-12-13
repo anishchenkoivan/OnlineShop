@@ -1,6 +1,7 @@
 package org.example.entity;
 
 import org.example.entity.entityId.UserId;
+import org.example.entity.exceptions.RemoveFromCartException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,5 +34,24 @@ public class User {
   @Override
   public int hashCode() {
     return Objects.hash(userId, cart);
+  }
+
+  public void addToCart(Products product, int value) {
+    if (cart.containsKey(product)) {
+      cart.put(product, cart.get(product) + value);
+    } else {
+      cart.put(product, value);
+    }
+  }
+
+  public void removeFromCart(Products product, int value) {
+    if (!cart.containsKey(product) || cart.get(product) - value < 0) {
+      throw new RemoveFromCartException("There is not enough product.");
+    }
+    if (cart.get(product) - value == 0) {
+      cart.remove(product);
+    } else {
+      cart.put(product, cart.get(product) - value);
+    }
   }
 }

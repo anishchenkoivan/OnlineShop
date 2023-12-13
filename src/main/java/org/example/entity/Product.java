@@ -1,10 +1,12 @@
 package org.example.entity;
 
-public enum Products {
+public enum Product {
   WATER,
   FLOUR,
   BREAD,
   VODKA,
   DOSHIRAK,
-  PASTA
+  PASTA;
+
+
 }

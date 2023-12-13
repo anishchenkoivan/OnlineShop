@@ -9,8 +9,8 @@ import java.util.Objects;
 
 public class User {
   private final UserId userId;
-  private final Map<Products, Integer> cart;
-  public User(UserId userId, HashMap<Products, Integer> cart) {
+  private final Map<Product, Integer> cart;
+  public User(UserId userId, HashMap<Product, Integer> cart) {
     this.userId = userId;
     this.cart = cart;
   }
@@ -19,7 +19,7 @@ public class User {
     return userId;
   }
 
-  public Map<Products, Integer> getCart() {
+  public Map<Product, Integer> getCart() {
     return cart;
   }
 
@@ -36,7 +36,7 @@ public class User {
     return Objects.hash(userId, cart);
   }
 
-  public void addToCart(Products product, int value) {
+  public void addToCart(Product product, int value) {
     if (cart.containsKey(product)) {
       cart.put(product, cart.get(product) + value);
     } else {
@@ -44,7 +44,7 @@ public class User {
     }
   }
 
-  public void removeFromCart(Products product, int value) {
+  public void removeFromCart(Product product, int value) {
     if (!cart.containsKey(product) || cart.get(product) - value < 0) {
       throw new RemoveFromCartException("There is not enough product.");
     }

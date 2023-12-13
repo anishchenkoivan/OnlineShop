@@ -1,6 +1,5 @@
 package org.example.repository;
 
-import org.example.entity.Products;
 import org.example.entity.User;
 import org.example.entity.entityId.UserId;
 

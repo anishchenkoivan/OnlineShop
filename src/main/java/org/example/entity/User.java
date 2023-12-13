@@ -1,6 +1,6 @@
 package org.example.entity;
 
-import org.example.entityId.UserId;
+import org.example.entity.entityId.UserId;
 
 import java.util.HashMap;
 import java.util.Map;

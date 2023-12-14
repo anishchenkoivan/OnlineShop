@@ -27,9 +27,8 @@ public class InMemoryUserRepository implements UserRepository{
   @Override
   public User getUserById(UserId userId) {
     if (!usersMap.containsKey(userId)) {
-      throw new UserNotFoundException("There is not exist user with id " + userId);
+      throw new UserNotFoundException("There is no user with id " + userId);
     } else {
-      LOG.debug("User was found by id: " + userId);
       return usersMap.get(userId);
     }
   }
@@ -39,16 +38,14 @@ public class InMemoryUserRepository implements UserRepository{
     UserId userId = generateId();
     User user = new User(userId, new HashMap<>());
     usersMap.put(userId, user);
-    LOG.debug("User was created with id: " + userId);
     return userId;
   }
 
   @Override
   public void deleteUser(UserId userId) {
     if (!usersMap.containsKey(userId)) {
-      throw new UserNotFoundException("There is not exist user with id " + userId);
+      throw new UserNotFoundException("There is no user with id " + userId);
     } else {
-      LOG.debug("User was deleted by id: " + userId);
       usersMap.remove(userId);
     }
   }

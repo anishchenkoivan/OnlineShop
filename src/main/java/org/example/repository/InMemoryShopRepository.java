@@ -15,7 +15,7 @@ public class InMemoryShopRepository implements ShopRepository {
   private static final Logger LOG = LoggerFactory.getLogger(InMemoryUserRepository.class);
 
   ObjectMapper objectMapper;
-  Map<Product, Integer> cart = new HashMap<>();
+  Map<Product, Integer> stock = new HashMap<>();
 
   public InMemoryShopRepository(ObjectMapper objectMapper) {
     this.objectMapper = objectMapper;
@@ -25,9 +25,8 @@ public class InMemoryShopRepository implements ShopRepository {
   @Override
   public synchronized void purchase(User user) {
     for (Product key : user.getCart().keySet()) {
-      LOG.info("User with id " + user.getUserId() + " bought " + user.getCart().get(key) + " " + key.getUnit());
+      stock.put(key, stock.get(key) - user.getCart().get(key));
     }
-    user.clearCart();
   }
 
   @Override
@@ -37,15 +36,19 @@ public class InMemoryShopRepository implements ShopRepository {
       Map<String, Integer> productsMap = objectMapper.readValue(reader, HashMap.class);
 
       for (Product p : Product.values()) {
-        cart.put(p, 0);
+        stock.put(p, p.getValue());
       }
 
       for (String p : productsMap.keySet()) {
-        cart.put(Product.valueOf(p), productsMap.get(p));
-        LOG.debug("Was added " + productsMap.get(p) + " of " + p);
+        stock.put(Product.valueOf(p), productsMap.get(p));
       }
     } catch (IOException e) {
       LOG.warn("Config file not found");
     }
+  }
+
+  @Override
+  public synchronized int checkProduct(Product product) {
+    return stock.getOrDefault(product, 0);
   }
 }

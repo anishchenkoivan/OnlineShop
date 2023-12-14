@@ -21,4 +21,8 @@ public enum Product {
   public String getUnit() {
     return unit;
   }
+
+  public int getValue() {
+    return value;
+  }
 }

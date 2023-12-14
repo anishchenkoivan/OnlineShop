@@ -29,6 +29,10 @@ public class UserController implements Controller {
 
     @Override
     public void initializeEndpoints() {
+        createUser();
+        deleteUser();
+        addToCart();
+        removeFromCart();
     }
 
     private void createUser() {

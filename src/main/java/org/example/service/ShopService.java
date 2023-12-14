@@ -5,6 +5,7 @@ import org.example.entity.User;
 import org.example.entity.entityId.UserId;
 import org.example.repository.ShopRepository;
 import org.example.repository.UserRepository;
+import org.example.repository.exceptions.UserNotFoundException;
 import org.example.service.exceptions.PurchaseException;
 
 public class ShopService {
@@ -16,12 +17,12 @@ public class ShopService {
         this.userRepository = userRepository;
     }
 
-    synchronized void purchase(UserId userId) {
+    public synchronized void purchase(UserId userId) {
         User user;
         try {
             user = userRepository.getUserById(userId);
-        } catch (RuntimeException e) {
-            throw new UserNotFoundException("Couldn't find user with id=" + userId, e);
+        } catch (UserNotFoundException e) {
+            throw new PurchaseException("Couldn't find user with id=" + userId, e);
         }
 
         for (var item : user.getCart().entrySet()) {

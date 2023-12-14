@@ -1,2 +1,4 @@
-package org.example.controller.response;public record PurchaseResponse() {
+package org.example.controller.response;
+
+public record PurchaseResponse() {
 }

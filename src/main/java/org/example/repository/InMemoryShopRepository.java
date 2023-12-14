@@ -25,9 +25,8 @@ public class InMemoryShopRepository implements ShopRepository {
   @Override
   public synchronized void purchase(User user) {
     for (Product key : user.getCart().keySet()) {
-      LOG.info("User with id " + user.getUserId() + " bought " + user.getCart().get(key) + " " + key.getUnit());
+      stock.put(key, stock.get(key) - user.getCart().get(key));
     }
-    user.clearCart();
   }
 
   @Override
@@ -42,7 +41,6 @@ public class InMemoryShopRepository implements ShopRepository {
 
       for (String p : productsMap.keySet()) {
         stock.put(Product.valueOf(p), productsMap.get(p));
-        LOG.debug("Was added " + productsMap.get(p) + " of " + p);
       }
     } catch (IOException e) {
       LOG.warn("Config file not found");

@@ -6,7 +6,6 @@ import org.example.entity.entityId.UserId;
 import org.example.repository.ShopRepository;
 import org.example.repository.UserRepository;
 import org.example.service.exceptions.PurchaseException;
-import org.example.service.exceptions.UserNotFoundException;
 
 public class ShopService {
     private final ShopRepository shopRepository;

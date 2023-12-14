@@ -1,4 +1,4 @@
 package org.example.controller.response;
 
-public record ErrorResponse() {
+public record ErrorResponse(String message) {
 }

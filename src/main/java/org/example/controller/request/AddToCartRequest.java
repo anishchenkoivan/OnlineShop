@@ -1,4 +1,6 @@
 package org.example.controller.request;
 
-public class AddToCartRequest {
+import org.example.entity.Product;
+
+public record AddToCartRequest (Product product, int amount) {
 }

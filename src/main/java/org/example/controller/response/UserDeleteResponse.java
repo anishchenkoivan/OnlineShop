@@ -1,4 +1,4 @@
 package org.example.controller.response;
 
-public class UserDeleteResponse {
+public record UserDeleteResponse() {
 }

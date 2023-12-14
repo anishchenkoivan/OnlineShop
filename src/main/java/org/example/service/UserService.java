@@ -5,7 +5,9 @@ import org.example.entity.User;
 import org.example.entity.entityId.UserId;
 import org.example.repository.ShopRepository;
 import org.example.repository.UserRepository;
+import org.example.repository.exceptions.UserNotFoundException;
 import org.example.service.exceptions.CartUpdateException;
+import org.example.service.exceptions.UserDeleteException;
 
 public class UserService {
     private final ShopRepository shopRepository;
@@ -21,7 +23,11 @@ public class UserService {
     }
 
     public void deleteUser(UserId userId) {
-        userRepository.deleteUser(userId);
+        try {
+            userRepository.deleteUser(userId);
+        } catch (UserNotFoundException e) {
+            throw new UserDeleteException("Couldn't find user with id=" + userId, e);
+        }
     }
 
     public void addToCart(UserId id, Product product, int amount) {

@@ -1,2 +1,4 @@
-package org.example.controller.response;public record AddToCartResponse() {
+package org.example.controller.response;
+
+public record AddToCartResponse() {
 }

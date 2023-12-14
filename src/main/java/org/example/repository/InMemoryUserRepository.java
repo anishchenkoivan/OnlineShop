@@ -17,12 +17,10 @@ public class InMemoryUserRepository implements UserRepository{
   }
 
   @Override
-  public User createUser() {
+  public UserId createUser() {
     return null;
   }
 
   @Override
-  public void deleteUser() {
-
-  }
+  public void deleteUser(UserId id) {}
 }

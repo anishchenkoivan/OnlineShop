@@ -36,7 +36,7 @@ public class User {
     return Objects.hash(userId, cart);
   }
 
-  public void addToCart(Product product, int value) {
+  public synchronized void addToCart(Product product, int value) {
     if (cart.containsKey(product)) {
       cart.put(product, cart.get(product) + value);
     } else {
@@ -44,7 +44,7 @@ public class User {
     }
   }
 
-  public void removeFromCart(Product product, int value) {
+  public synchronized void removeFromCart(Product product, int value) {
     if (!cart.containsKey(product) || cart.get(product) - value < 0) {
       throw new RemoveFromCartException("There is not enough product.");
     }
@@ -55,7 +55,7 @@ public class User {
     }
   }
 
-  public void clearCart() {
+  public synchronized void clearCart() {
     cart.clear();
   }
 }

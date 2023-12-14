@@ -3,6 +3,7 @@ package org.example.service;
 import org.example.entity.Product;
 import org.example.entity.User;
 import org.example.entity.entityId.UserId;
+import org.example.entity.exceptions.RemoveFromCartException;
 import org.example.repository.ShopRepository;
 import org.example.repository.UserRepository;
 import org.example.service.exceptions.CartUpdateException;
@@ -51,6 +52,10 @@ public class UserService {
             throw new CartUpdateException("Not enough products in the cart of type " + product);
         }
 
-        user.removeFromCart(product, amount);
+        try {
+            user.removeFromCart(product, amount);
+        } catch (RemoveFromCartException e) {
+            throw new CartUpdateException("Not enough products in the cart of type " + product, e);
+        }
     }
 }

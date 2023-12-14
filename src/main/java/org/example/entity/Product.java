@@ -17,4 +17,8 @@ public enum Product {
     this.unit = unit;
     this.value = value;
   }
+
+  public String getUnit() {
+    return unit;
+  }
 }

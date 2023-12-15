@@ -1,11 +1,9 @@
 {
-  "productEnum": {
-    "water" : 1997,
-    "flour" : 556,
-    "bread" : 42,
-    "vodka" : 155037934,
-    "pasta" : 6799,
-    "rice" : 107,
-    "cookie" : 999
-  }
+  "WATER" : 1997,
+  "FLOUR" : 556,
+  "BREAD" : 42,
+  "VODKA" : 155037934,
+  "PASTA" : 6799,
+  "RICE" : 107,
+  "COOKIE" : 999
 }

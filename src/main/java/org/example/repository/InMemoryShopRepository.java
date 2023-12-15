@@ -36,12 +36,9 @@ public class InMemoryShopRepository implements ShopRepository {
       Map<String, Integer> productsMap = objectMapper.readValue(reader, HashMap.class);
 
       for (Product p : Product.values()) {
-        stock.put(p, p.getValue());
+        stock.put(p, productsMap.getOrDefault(p.toString(), 0));
       }
 
-      for (String p : productsMap.keySet()) {
-        stock.put(Product.valueOf(p), productsMap.get(p));
-      }
     } catch (IOException e) {
       LOG.warn("Config file not found");
     }

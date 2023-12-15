@@ -31,6 +31,7 @@ public class ShopController implements Controller {
 
     @Override
     public void initializeEndpoints() {
+      purchase();
     }
 
     private void purchase() {
@@ -41,7 +42,7 @@ public class ShopController implements Controller {
                     String body = request.body();
                     PurchaseRequest purchaseRequest = objectMapper.readValue(body, PurchaseRequest.class);
                     try {
-                        shopService.purchase(purchaseRequest.userId());
+                        shopService.purchase(new UserId(purchaseRequest.userId()));
                         LOG.debug("User with id={} made a purchase", purchaseRequest.userId());
                         response.status(201);
                         return objectMapper.writeValueAsString(new PurchaseResponse());

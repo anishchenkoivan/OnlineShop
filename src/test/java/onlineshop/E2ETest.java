@@ -29,7 +29,7 @@ public class E2ETest {
   private Service service;
 
   @BeforeEach
-  void befofeEach() {
+  void beforeEach() {
     service = Service.ignite();
   }
 

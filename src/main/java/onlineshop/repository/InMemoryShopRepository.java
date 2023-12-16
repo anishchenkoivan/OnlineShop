@@ -1,8 +1,8 @@
-package org.example.repository;
+package onlineshop.repository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.entity.Product;
-import org.example.entity.User;
+import onlineshop.entity.Product;
+import onlineshop.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

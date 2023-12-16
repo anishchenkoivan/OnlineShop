@@ -1,7 +1,7 @@
-package org.example.entity;
+package onlineshop.entity;
 
-import org.example.entity.entityId.UserId;
-import org.example.entity.exceptions.RemoveFromCartException;
+import onlineshop.entity.entityId.UserId;
+import onlineshop.entity.exceptions.RemoveFromCartException;
 
 import java.util.HashMap;
 import java.util.Map;

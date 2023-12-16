@@ -1,7 +1,7 @@
-package org.example.repository;
+package onlineshop.repository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.entity.Product;
+import onlineshop.entity.Product;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

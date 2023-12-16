@@ -1,6 +1,6 @@
-package org.example.controller.response;
+package onlineshop.controller.response;
 
-import org.example.entity.entityId.UserId;
+import onlineshop.entity.entityId.UserId;
 
 public record UserCreateResponse(UserId id) {
 }

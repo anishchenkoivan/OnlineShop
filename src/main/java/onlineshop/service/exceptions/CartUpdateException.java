@@ -1,4 +1,4 @@
-package org.example.service.exceptions;
+package onlineshop.service.exceptions;
 
 public class CartUpdateException extends RuntimeException {
     public CartUpdateException(String message) {

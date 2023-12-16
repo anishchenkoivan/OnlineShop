@@ -1,14 +1,14 @@
-package org.example.service;
+package onlineshop.service;
 
-import org.example.entity.Product;
-import org.example.entity.User;
-import org.example.entity.entityId.UserId;
-import org.example.entity.exceptions.RemoveFromCartException;
-import org.example.repository.ShopRepository;
-import org.example.repository.UserRepository;
-import org.example.repository.exceptions.UserNotFoundException;
-import org.example.service.exceptions.CartUpdateException;
-import org.example.service.exceptions.UserDeleteException;
+import onlineshop.entity.Product;
+import onlineshop.entity.User;
+import onlineshop.entity.entityId.UserId;
+import onlineshop.entity.exceptions.RemoveFromCartException;
+import onlineshop.repository.ShopRepository;
+import onlineshop.repository.UserRepository;
+import onlineshop.repository.exceptions.UserNotFoundException;
+import onlineshop.service.exceptions.CartUpdateException;
+import onlineshop.service.exceptions.UserDeleteException;
 
 public class UserService {
     private final ShopRepository shopRepository;

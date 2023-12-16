@@ -1,7 +1,7 @@
-package org.example.repository;
+package onlineshop.repository;
 
-import org.example.entity.User;
-import org.example.entity.entityId.UserId;
+import onlineshop.entity.User;
+import onlineshop.entity.entityId.UserId;
 
 public interface UserRepository {
     UserId generateId();

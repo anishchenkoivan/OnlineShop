@@ -1,12 +1,12 @@
-package org.example.service;
+package onlineshop.service;
 
-import org.example.entity.Product;
-import org.example.entity.User;
-import org.example.entity.entityId.UserId;
-import org.example.repository.ShopRepository;
-import org.example.repository.UserRepository;
-import org.example.repository.exceptions.UserNotFoundException;
-import org.example.service.exceptions.PurchaseException;
+import onlineshop.entity.Product;
+import onlineshop.entity.entityId.UserId;
+import onlineshop.repository.exceptions.UserNotFoundException;
+import onlineshop.entity.User;
+import onlineshop.repository.ShopRepository;
+import onlineshop.repository.UserRepository;
+import onlineshop.service.exceptions.PurchaseException;
 
 public class ShopService {
     private final ShopRepository shopRepository;

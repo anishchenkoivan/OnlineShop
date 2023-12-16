@@ -1,4 +1,4 @@
-package org.example.controller.response;
+package onlineshop.controller.response;
 
 public record AddToCartResponse() {
 }

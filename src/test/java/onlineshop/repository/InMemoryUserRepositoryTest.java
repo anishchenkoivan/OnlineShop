@@ -1,8 +1,8 @@
-package org.example.repository;
+package onlineshop.repository;
 
-import org.example.entity.User;
-import org.example.entity.entityId.UserId;
-import org.example.repository.exceptions.UserNotFoundException;
+import onlineshop.entity.User;
+import onlineshop.entity.entityId.UserId;
+import onlineshop.repository.exceptions.UserNotFoundException;
 import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

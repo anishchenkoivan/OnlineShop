@@ -1,4 +1,4 @@
-package org.example.controller;
+package onlineshop.controller;
 
 public interface Controller {
     void initializeEndpoints();

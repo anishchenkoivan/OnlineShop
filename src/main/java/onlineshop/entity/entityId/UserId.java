@@ -1,4 +1,4 @@
-package org.example.entity.entityId;
+package onlineshop.entity.entityId;
 
 import java.util.Objects;
 

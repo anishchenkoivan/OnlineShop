@@ -1,4 +1,4 @@
-package org.example.entity;
+package onlineshop.entity;
 
 public enum Product {
   WATER,

@@ -1,6 +1,4 @@
-package org.example.controller.request;
-
-import org.example.entity.entityId.UserId;
+package onlineshop.controller.request;
 
 public record PurchaseRequest(long userId) {
 }

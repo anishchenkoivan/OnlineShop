@@ -1,6 +1,6 @@
-package org.example;
+package onlineshop;
 
-import org.example.controller.Controller;
+import onlineshop.controller.Controller;
 
 import java.util.List;
 

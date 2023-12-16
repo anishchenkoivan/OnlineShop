@@ -1,4 +1,4 @@
-package org.example.entity.exceptions;
+package onlineshop.entity.exceptions;
 
 public class RemoveFromCartException extends RuntimeException {
   public RemoveFromCartException(String message) {

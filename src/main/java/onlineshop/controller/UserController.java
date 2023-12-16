@@ -1,13 +1,14 @@
-package org.example.controller;
+package onlineshop.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.controller.request.AddToCartRequest;
-import org.example.controller.request.RemoveFromCartRequest;
+import onlineshop.controller.request.AddToCartRequest;
+import onlineshop.controller.request.RemoveFromCartRequest;
+import onlineshop.controller.response.*;
+import onlineshop.entity.entityId.UserId;
+import onlineshop.service.UserService;
+import onlineshop.service.exceptions.CartUpdateException;
+import onlineshop.service.exceptions.UserDeleteException;
 import org.example.controller.response.*;
-import org.example.entity.entityId.UserId;
-import org.example.service.UserService;
-import org.example.service.exceptions.CartUpdateException;
-import org.example.service.exceptions.UserDeleteException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import spark.Request;

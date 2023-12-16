@@ -1,13 +1,13 @@
-package org.example;
+package onlineshop;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.controller.Controller;
-import org.example.controller.ShopController;
-import org.example.controller.UserController;
-import org.example.repository.InMemoryShopRepository;
-import org.example.repository.InMemoryUserRepository;
-import org.example.service.ShopService;
-import org.example.service.UserService;
+import onlineshop.controller.Controller;
+import onlineshop.repository.InMemoryShopRepository;
+import onlineshop.repository.InMemoryUserRepository;
+import onlineshop.service.ShopService;
+import onlineshop.service.UserService;
+import onlineshop.controller.ShopController;
+import onlineshop.controller.UserController;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

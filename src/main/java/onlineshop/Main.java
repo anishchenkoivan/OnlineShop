@@ -1,14 +1,14 @@
-package org.example;
+package onlineshop;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.controller.ShopController;
-import org.example.controller.UserController;
-import org.example.repository.InMemoryShopRepository;
-import org.example.repository.InMemoryUserRepository;
-import org.example.repository.ShopRepository;
-import org.example.repository.UserRepository;
-import org.example.service.ShopService;
-import org.example.service.UserService;
+import onlineshop.repository.InMemoryShopRepository;
+import onlineshop.repository.InMemoryUserRepository;
+import onlineshop.controller.ShopController;
+import onlineshop.controller.UserController;
+import onlineshop.repository.ShopRepository;
+import onlineshop.repository.UserRepository;
+import onlineshop.service.ShopService;
+import onlineshop.service.UserService;
 import spark.Service;
 
 import java.util.List;
